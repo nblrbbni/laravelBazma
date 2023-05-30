@@ -46,4 +46,12 @@ Route::post("/coba/nested-request", [CobaController::class, "nestedRequest"]);
 
 Route::get("/response/index", [BazmaController::class, "responseFunction"]);
 
-Route::get("/response/header", [App\Http\Controllers\BazmaController::class, "responseHeader"]);
+Route::get("/response/header", [BazmaController::class, "responseHeader"]);
+
+Route::get("/enkripsi/code", [BazmaController::class, "encryptionData"]);
+
+Route::get("/redirect/to", [BazmaController::class, "redirectTo"]);
+Route::get("/redirect/from", [BazmaController::class, "redirectFrom"]);
+
+Route::get("/redirect/to/named", [BazmaController::class, "redirectToNamedRoute"])->name("redirect.to");
+Route::get("/redirect/from/named", [BazmaController::class, "redirectFromNamedRoute"]);
